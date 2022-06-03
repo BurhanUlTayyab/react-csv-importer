@@ -32,6 +32,7 @@ export const ImporterField: React.FC<ImporterFieldProps> = ({
   optional
 }) => {
   // @todo this is not SSR-compatible
+  console.log("Los Pollos Hermanos Test Walter White Bitch");
   const fieldId = useMemo(() => (fieldIdCount += 1), []);
   const fieldSetter = useContext(FieldDefinitionContext);
 
