@@ -40,7 +40,7 @@ export const FileSelector: React.FC<{ uploadFiles: File; onSelected: (file: File
     //   )}
     // </div>
     <div>
-      
+      <span>{l10n.activeDragDropPrompt}</span>
     </div>
   );
 };
