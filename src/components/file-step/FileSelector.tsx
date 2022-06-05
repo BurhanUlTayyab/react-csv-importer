@@ -8,8 +8,6 @@ export const FileSelector: React.FC<{ uploadFiles: File; onSelected: (file: File
   const onSelectedRef = useRef(onSelected);
   onSelectedRef.current = onSelected;
 
-  console.log("Nalli Nihari", uploadFiles)
-
   useEffect(() => {
     onSelectedRef.current(uploadFiles);
   });
@@ -20,7 +18,6 @@ export const FileSelector: React.FC<{ uploadFiles: File; onSelected: (file: File
     }
 
     const file = acceptedFiles[0];
-    console.log("Nalli Biryani", file)
     onSelectedRef.current(file);
   }, []);
 
