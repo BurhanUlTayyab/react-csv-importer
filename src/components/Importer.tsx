@@ -90,8 +90,6 @@ export function Importer<Row extends BaseRow>({
   ...customPapaParseConfig
 }: ImporterProps<Row>): React.ReactElement {
   // helper to combine our displayed content and the user code that provides field definitions
-  console.log("Testing Tafree", filesImporter);
-
   const [fields, setFields] = useState<FieldDef[]>([]);
 
   const [fileState, setFileState] = useState<FileStepState | null>(null);
@@ -152,7 +150,6 @@ export function Importer<Row extends BaseRow>({
             prevState={fileState}
             filesImporter={filesImporter}
             onChange={(parsedPreview) => {
-              console.log("Kanjoos", parsedPreview),
               setFileState(parsedPreview);
             }}
             onAccept={() => {
