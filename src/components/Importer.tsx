@@ -32,7 +32,6 @@ export const ImporterField: React.FC<ImporterFieldProps> = ({
   optional
 }) => {
   // @todo this is not SSR-compatible
-  console.log("Los Pollos Hermanos Test Walter White Bitch");
   const fieldId = useMemo(() => (fieldIdCount += 1), []);
   const fieldSetter = useContext(FieldDefinitionContext);
 
@@ -90,6 +89,8 @@ export function Importer<Row extends BaseRow>({
   ...customPapaParseConfig
 }: ImporterProps<Row>): React.ReactElement {
   // helper to combine our displayed content and the user code that provides field definitions
+  console.log("Los Pollos Hermanos Test Walter White Bitch");
+
   const [fields, setFields] = useState<FieldDef[]>([]);
 
   const [fileState, setFileState] = useState<FileStepState | null>(null);
