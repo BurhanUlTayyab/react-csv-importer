@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useLocale } from '../../locale/LocaleContext';
 
@@ -9,6 +9,11 @@ export const FileSelector: React.FC<{ uploadFiles: File; onSelected: (file: File
   onSelectedRef.current = onSelected;
 
   console.log("Nalli Nihari", uploadFiles)
+
+  useEffect(() => {
+    onSelectedRef.current(uploadFiles);
+  });
+
   const dropHandler = useCallback((acceptedFiles: File[]) => {
     if (acceptedFiles.length < 1) {
       return;
@@ -40,7 +45,6 @@ export const FileSelector: React.FC<{ uploadFiles: File; onSelected: (file: File
     //   )}
     // </div>
     <div>
-      <span>{l10n.activeDragDropPrompt}</span>
     </div>
   );
 };
