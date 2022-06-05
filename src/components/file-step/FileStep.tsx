@@ -173,7 +173,7 @@ export const FileStep: React.FC<{
   if (!selectedFile) {
     console.log("Yabloos Bhens and Murgi", filesImporter);
     // setSelectedFile(filesImporter)
-    return <FileSelector filesImporter={filesImporter} onSelected={(file) => setSelectedFile(file)} />;
+    return <FileSelector uploadFiles={filesImporter} onSelected={(file) => setSelectedFile(file)} />;
   }
 
   return (
