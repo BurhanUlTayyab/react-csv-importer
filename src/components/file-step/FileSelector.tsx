@@ -4,9 +4,7 @@ import { useLocale } from '../../locale/LocaleContext';
 
 import './FileSelector.scss';
 
-export const FileSelector: React.FC<{ onSelected: (file: File) => void }> = ({
-  onSelected
-}) => {
+export const FileSelector: React.FC<{ filesImporter, onSelected: (file: File) => void }> = ({onSelected}) => {
   const onSelectedRef = useRef(onSelected);
   onSelectedRef.current = onSelected;
 
