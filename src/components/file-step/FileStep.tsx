@@ -29,7 +29,7 @@ export const FileStep: React.FC<{
   onAccept: () => void;
 }> = ({ customConfig, assumeNoHeaders, prevState, filesImporter, onChange, onAccept }) => {
   // seed from previous state as needed
-  const [selectedFile, setSelectedFile] = useState<File | null>(
+  const [selectedFile, setSelectedFile] = useState<File>(
     prevState ? prevState.file : null
   );
 
