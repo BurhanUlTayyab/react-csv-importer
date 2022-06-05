@@ -8,6 +8,7 @@ export const FileSelector: React.FC<{ uploadFiles: File; onSelected: (file: File
   const onSelectedRef = useRef(onSelected);
   onSelectedRef.current = onSelected;
 
+  console.log("Nalli Nihari", uploadFiles)
   const dropHandler = useCallback((acceptedFiles: File[]) => {
     if (acceptedFiles.length < 1) {
       return;
