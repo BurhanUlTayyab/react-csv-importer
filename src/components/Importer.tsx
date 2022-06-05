@@ -90,7 +90,7 @@ export function Importer<Row extends BaseRow>({
   ...customPapaParseConfig
 }: ImporterProps<Row>): React.ReactElement {
   // helper to combine our displayed content and the user code that provides field definitions
-  console.log("Testing Tafree");
+  console.log("Testing Tafree", filesImporter);
 
   const [fields, setFields] = useState<FieldDef[]>([]);
 
