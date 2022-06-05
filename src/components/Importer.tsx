@@ -150,6 +150,7 @@ export function Importer<Row extends BaseRow>({
             assumeNoHeaders={assumeNoHeaders}
             prevState={fileState}
             onChange={(parsedPreview) => {
+              console.log("Kanjoos", parsedPreview),
               setFileState(parsedPreview);
             }}
             onAccept={() => {
