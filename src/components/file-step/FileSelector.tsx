@@ -27,18 +27,21 @@ export const FileSelector: React.FC<{ onSelected: (file: File) => void }> = ({
   const l10n = useLocale('fileStep');
 
   return (
-    <div
-      className="CSVImporter_FileSelector"
-      data-active={!!isDragActive}
-      {...getRootProps()}
-    >
-      <input {...getInputProps()} />
+    // <div
+    //   className="CSVImporter_FileSelector"
+    //   data-active={!!isDragActive}
+    //   {...getRootProps()}
+    // >
+    //   <input {...getInputProps()} />
 
-      {isDragActive ? (
-        <span>{l10n.activeDragDropPrompt}</span>
-      ) : (
-        <span>{l10n.initialDragDropPrompt}</span>
-      )}
+    //   {isDragActive ? (
+    //     <span>{l10n.activeDragDropPrompt}</span>
+    //   ) : (
+    //     <span>{l10n.initialDragDropPrompt}</span>
+    //   )}
+    // </div>
+    <div>
+      
     </div>
   );
 };
