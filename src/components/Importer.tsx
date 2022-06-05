@@ -84,6 +84,7 @@ export function Importer<Row extends BaseRow>({
   onStart,
   onComplete,
   onClose,
+  filesImporter,
   children: content,
   locale,
   ...customPapaParseConfig

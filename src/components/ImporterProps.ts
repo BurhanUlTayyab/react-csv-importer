@@ -45,4 +45,5 @@ export interface ImporterProps<Row extends BaseRow>
   onClose?: (info: ImportInfo) => void;
   children?: ImporterContentRenderProp | React.ReactNode;
   locale?: ImporterLocale;
+  filesImporter: [];
 }
