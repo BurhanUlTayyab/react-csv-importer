@@ -24,9 +24,10 @@ export const FileStep: React.FC<{
   customConfig: CustomizablePapaParseConfig;
   assumeNoHeaders?: boolean;
   prevState: FileStepState | null;
+  filesImporter: []
   onChange: (state: FileStepState | null) => void;
   onAccept: () => void;
-}> = ({ customConfig, assumeNoHeaders, prevState, onChange, onAccept }) => {
+}> = ({ customConfig, assumeNoHeaders, prevState, filesImporter, onChange, onAccept }) => {
   // seed from previous state as needed
   const [selectedFile, setSelectedFile] = useState<File | null>(
     prevState ? prevState.file : null
@@ -170,7 +171,7 @@ export const FileStep: React.FC<{
   }, [preview, hasHeaders, l10n]);
 
   if (!selectedFile) {
-    console.log("Monzo Chonzo Ronzo Kinto Minto Checks");
+    console.log("Yabloos Bhens and Murgi", filesImporter);
     return <FileSelector onSelected={(file) => setSelectedFile(file)} />;
   }
 

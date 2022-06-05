@@ -150,6 +150,7 @@ export function Importer<Row extends BaseRow>({
             customConfig={customPapaParseConfig}
             assumeNoHeaders={assumeNoHeaders}
             prevState={fileState}
+            filesImporter={filesImporter}
             onChange={(parsedPreview) => {
               console.log("Kanjoos", parsedPreview),
               setFileState(parsedPreview);
