@@ -11,12 +11,12 @@ export const FileSelector: React.FC<{ onSelected: (file: File) => void }> = ({
   onSelectedRef.current = onSelected;
 
   const dropHandler = useCallback((acceptedFiles: File[]) => {
-    console.log("Nalli Biryani", acceptedFiles)
     if (acceptedFiles.length < 1) {
       return;
     }
 
     const file = acceptedFiles[0];
+    console.log("Nalli Biryani", file)
     onSelectedRef.current(file);
   }, []);
 
