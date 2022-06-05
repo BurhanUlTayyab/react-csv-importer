@@ -178,7 +178,6 @@ export const FileStep: React.FC<{
 
   return (
     <ImporterFrame
-      fileName={selectedFile.name}
       nextDisabled={!preview || !!preview.parseError || !!preview.parseWarning}
       onNext={() => {
         if (!preview || preview.parseError) {
