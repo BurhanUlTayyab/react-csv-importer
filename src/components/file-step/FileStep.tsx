@@ -7,7 +7,7 @@ import {
   CustomizablePapaParseConfig
 } from '../../parser';
 import { ImporterFrame } from '../ImporterFrame';
-import { FileSelector } from './FileSelector';
+// import { FileSelector } from './FileSelector';
 import { FormatRawPreview } from './FormatRawPreview';
 import { FormatDataRowPreview } from './FormatDataRowPreview';
 import { FormatErrorMessage } from './FormatErrorMessage';
