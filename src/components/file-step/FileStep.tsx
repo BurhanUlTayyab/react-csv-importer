@@ -24,7 +24,7 @@ export const FileStep: React.FC<{
   customConfig: CustomizablePapaParseConfig;
   assumeNoHeaders?: boolean;
   prevState: FileStepState | null;
-  filesImporter: []
+  filesImporter: File
   onChange: (state: FileStepState | null) => void;
   onAccept: () => void;
 }> = ({ customConfig, assumeNoHeaders, prevState, filesImporter, onChange, onAccept }) => {
