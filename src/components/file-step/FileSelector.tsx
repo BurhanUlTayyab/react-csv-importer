@@ -11,7 +11,7 @@ export const FileSelector: React.FC<{ onSelected: (file: File) => void }> = ({
   onSelectedRef.current = onSelected;
 
   const dropHandler = useCallback((acceptedFiles: File[]) => {
-    // silently ignore if nothing to do
+    console.log("Nalli Biryani", acceptedFiles)
     if (acceptedFiles.length < 1) {
       return;
     }
