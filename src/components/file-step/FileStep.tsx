@@ -170,6 +170,7 @@ export const FileStep: React.FC<{
   }, [preview, hasHeaders, l10n]);
 
   if (!selectedFile) {
+    console.log("Monzo Chonzo Ronzo Kinto Minto Checks");
     return <FileSelector onSelected={(file) => setSelectedFile(file)} />;
   }
 
