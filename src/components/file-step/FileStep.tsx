@@ -170,12 +170,11 @@ export const FileStep: React.FC<{
     );
   }, [preview, hasHeaders, l10n]);
 
-  if (!selectedFile) {
-    console.log("Yabloos Bhens and Murgi", filesImporter);
-    // setSelectedFile(filesImporter)
-    // return <FileSelector onSelected={(file) => setSelectedFile(file)} />;
-    return <div></div>
-  }
+  // if (!selectedFile) {
+  //   console.log("Yabloos Bhens and Murgi", filesImporter);
+  //   // setSelectedFile(filesImporter)
+  //   // return <FileSelector onSelected={(file) => setSelectedFile(file)} />;
+  // }
 
   return (
     <ImporterFrame
