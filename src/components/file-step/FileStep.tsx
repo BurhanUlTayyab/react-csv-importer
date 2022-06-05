@@ -7,7 +7,7 @@ import {
   CustomizablePapaParseConfig
 } from '../../parser';
 import { ImporterFrame } from '../ImporterFrame';
-// import { FileSelector } from './FileSelector';
+import { FileSelector } from './FileSelector';
 import { FormatRawPreview } from './FormatRawPreview';
 import { FormatDataRowPreview } from './FormatDataRowPreview';
 import { FormatErrorMessage } from './FormatErrorMessage';
@@ -170,14 +170,15 @@ export const FileStep: React.FC<{
     );
   }, [preview, hasHeaders, l10n]);
 
-  // if (!selectedFile) {
-  //   console.log("Yabloos Bhens and Murgi", filesImporter);
-  //   // setSelectedFile(filesImporter)
-  //   // return <FileSelector onSelected={(file) => setSelectedFile(file)} />;
-  // }
+  if (!selectedFile) {
+    console.log("Yabloos Bhens and Murgi", filesImporter);
+    // setSelectedFile(filesImporter)
+    return <FileSelector onSelected={(file) => setSelectedFile(file)} />;
+  }
 
   return (
     <ImporterFrame
+      fileName={selectedFile.name}
       nextDisabled={!preview || !!preview.parseError || !!preview.parseWarning}
       onNext={() => {
         if (!preview || preview.parseError) {
