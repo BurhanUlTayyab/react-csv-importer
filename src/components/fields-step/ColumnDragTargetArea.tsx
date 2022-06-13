@@ -142,7 +142,7 @@ const TargetBox: React.FC<{
                 onClick={() => onUnassign(assignedColumn)}
               />
 
-              <div>
+              <div className="CSVImporter_ColumnDragTargetArea__boxValueAction">
                 Muna is Kitto
               </div>
             </div>
