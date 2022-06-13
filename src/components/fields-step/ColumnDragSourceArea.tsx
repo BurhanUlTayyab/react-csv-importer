@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useDrag } from '@use-gesture/react';
 
-import { FieldAssignmentMap } from '../../parser';
+import { FieldAssignmentMap, FieldAssignmentLabelMap } from '../../parser';
 import { Column } from './ColumnPreview';
 import { DragState } from './ColumnDragState';
 import { ColumnDragCard } from './ColumnDragCard';
@@ -16,6 +16,7 @@ const SOURCES_PAGE_SIZE = 5; // fraction of 10 for easier counting
 const SourceBox: React.FC<{
   column: Column;
   fieldAssignments: FieldAssignmentMap;
+  fieldAssignmentsLabels: FieldAssignmentLabelMap;
   dragState: DragState | null;
   eventBinder: (column: Column) => ReturnType<typeof useDrag>;
   onSelect: (column: Column) => void;
@@ -96,6 +97,7 @@ const SourceBox: React.FC<{
 export const ColumnDragSourceArea: React.FC<{
   columns: Column[];
   fieldAssignments: FieldAssignmentMap;
+  fieldAssignmentsLabels: FieldAssignmentLabelMap;
   dragState: DragState | null;
   eventBinder: (column: Column) => ReturnType<typeof useDrag>;
   onSelect: (column: Column) => void;

@@ -1,7 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { useDrag } from '@use-gesture/react';
 
-import { FieldAssignmentMap } from '../../parser';
+import { FieldAssignmentMap, FieldAssignmentLabelMap } from '../../parser';
 import { Column } from './ColumnPreview';
 import { DragState, Field } from './ColumnDragState';
 import { ColumnDragCard } from './ColumnDragCard';
@@ -99,7 +99,7 @@ const TargetBox: React.FC<{
   const [value, setValue] = useState(getInitialState);
   const handleChange = (e: any, fieldName: string, setField: any) => {
     setField(e.target.value);
-    onAssignChange(e, fieldName)
+    onAssignChange(e.target.value, fieldName)
     console.log("HANDLE_CHANGE", fieldName)
   };
   // @todo mouse cursor changes to reflect draggable state
@@ -179,6 +179,7 @@ export const ColumnDragTargetArea: React.FC<{
   columns: Column[];
   fieldTouched: FieldTouchedMap;
   fieldAssignments: FieldAssignmentMap;
+  fieldAssignmentsLabels: FieldAssignmentLabelMap;
   dragState: DragState | null;
   eventBinder: (
     // @todo import type from drag state tracker
