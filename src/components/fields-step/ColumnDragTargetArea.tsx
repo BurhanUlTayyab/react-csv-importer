@@ -100,7 +100,7 @@ const TargetBox: React.FC<{
   // };
   const handleChange = (e: any, field: any) => {
     setValue(e.target.value);
-    console.log("HANDLE_CHANGE", field)
+    console.log("HANDLE_CHANGE", e, field)
   }
   // @todo mouse cursor changes to reflect draggable state
   return (
