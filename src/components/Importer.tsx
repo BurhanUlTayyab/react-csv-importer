@@ -98,6 +98,9 @@ export function Importer<Row extends BaseRow>({
   const [fieldsState, setFieldsState] = useState<FieldsStepState | null>(null);
   const [fieldsAccepted, setFieldsAccepted] = useState<boolean>(false);
 
+  const [tagObj, settagObj] = useState<Object | null>(null);
+
+
   // reset field assignments when file changes
   const activeFile = fileState && fileState.file;
   useEffect(() => {
@@ -171,6 +174,7 @@ export function Importer<Row extends BaseRow>({
             fileState={fileState}
             fields={fields}
             prevState={fieldsState}
+            settagObj={settagObj}
             onChange={(state) => {
               setFieldsState(state);
             }}

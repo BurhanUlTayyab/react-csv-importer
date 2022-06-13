@@ -25,10 +25,11 @@ export const FieldsStep: React.FC<{
   fileState: FileStepState;
   fields: Field[];
   prevState: FieldsStepState | null;
+  settagObj: any;
   onChange: (state: FieldsStepState) => void;
   onAccept: () => void;
   onCancel: () => void;
-}> = ({ fileState, fields, prevState, onChange, onAccept, onCancel }) => {
+}> = ({ fileState, fields, prevState, settagObj, onChange, onAccept, onCancel }) => {
   const onChangeRef = useRef(onChange);
   onChangeRef.current = onChange;
 
@@ -92,7 +93,7 @@ export const FieldsStep: React.FC<{
   const [fieldTouched, setFieldTouched] = useState<FieldTouchedMap>({});
   const [validationError, setValidationError] = useState<string | null>(null);
 
-  const [tagObj, settagObj] = useState<Object | null>(null);
+  // const [tagObj, settagObj] = useState<Object | null>(null);
 
   const {
     fieldAssignments,
@@ -126,8 +127,6 @@ export const FieldsStep: React.FC<{
   }, [fieldAssignments]);
 
   const l10n = useLocale('fieldsStep');
-
-  console.log(tagObj)
 
   return (
     <ImporterFrame
