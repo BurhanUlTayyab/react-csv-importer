@@ -205,6 +205,8 @@ export function useColumnDragState(
       settagObj((prev: any) => {
         const copy = { ...prev };
 
+        console.log(copy)
+
         // ensure dropped column does not show up elsewhere
         // Object.keys(prev).forEach((e) => {
         //   if (copy[e]) {
@@ -213,11 +215,11 @@ export function useColumnDragState(
         // });
 
         // set new field column
-        if (fieldName !== null) {
-          copy[fieldName] = e;
-        }
+        // if (fieldName !== null) {
+        //   copy[fieldName] = e;
+        // }
 
-        return copy;
+        // return copy;
       });
 
       // settagObj({"Muna": 1, "Kitto": 2, "Tuna": 3})
