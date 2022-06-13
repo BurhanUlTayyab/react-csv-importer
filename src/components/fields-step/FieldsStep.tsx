@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 
-import { FieldAssignmentMap } from '../../parser';
+import { FieldAssignmentMap, TagAssignmentMap } from '../../parser';
 import { FileStepState } from '../file-step/FileStep';
 import { ImporterFrame } from '../ImporterFrame';
 import {
@@ -19,6 +19,7 @@ export type Field = DragField;
 
 export interface FieldsStepState {
   fieldAssignments: FieldAssignmentMap;
+  tagAssignments: TagAssignmentMap;
 }
 
 export const FieldsStep: React.FC<{
@@ -104,6 +105,7 @@ export const FieldsStep: React.FC<{
   } = useColumnDragState(
     fields,
     prevState ? prevState.fieldAssignments : initialAssignments,
+    initialAssignments,
     (fieldName) => {
       setFieldTouched((prev) => {
         if (prev[fieldName]) {
