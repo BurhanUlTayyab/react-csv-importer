@@ -106,6 +106,7 @@ export const FieldsStep: React.FC<{
   } = useColumnDragState(
     fields,
     prevState ? prevState.fieldAssignments : initialAssignments,
+    settagObj,
     (fieldName) => {
       setFieldTouched((prev) => {
         if (prev[fieldName]) {
