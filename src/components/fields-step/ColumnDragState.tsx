@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { useDrag } from '@use-gesture/react';
 
-import { FieldAssignmentMap } from '../../parser';
+import { FieldAssignmentMap, TagAssignmentMap } from '../../parser';
 import { Column } from './ColumnPreview';
 
 export interface Field {
@@ -36,6 +36,7 @@ export interface DragInfo {
 export function useColumnDragState(
   fields: Field[],
   initialAssignments: FieldAssignmentMap,
+  initialtagAssignments: TagAssignmentMap,
   onTouched: (fieldName: string) => void
 ): DragInfo {
   // wrap in ref to avoid re-triggering
@@ -46,6 +47,10 @@ export function useColumnDragState(
 
   const [fieldAssignments, setFieldAssignments] = useState<FieldAssignmentMap>(
     initialAssignments
+  );
+
+  const [tagAssignments, setTagAssignments] = useState<TagAssignmentMap>(
+    initialtagAssignments
   );
 
   // make sure there are no extra fields
