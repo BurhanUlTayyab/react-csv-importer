@@ -48,6 +48,10 @@ export function useColumnDragState(
     initialAssignments
   );
 
+  const [tagAssignments, settagAssignments] = useState<TagAssignmentMap>(
+    initialAssignments
+  );
+
   // make sure there are no extra fields
   useEffect(() => {
     const removedFieldNames = Object.keys(fieldAssignments).filter(
@@ -70,7 +74,7 @@ export function useColumnDragState(
   }, [fields, fieldAssignments]);
 
   const internaltagHandler = useCallback(
-    (column: Column, fieldName: string | null) => {
+    (column: any, fieldName: string | null) => {
       // mark for validation display
     },
     []

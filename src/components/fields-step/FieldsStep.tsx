@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 
-import { FieldAssignmentMap } from '../../parser';
+import { FieldAssignmentMap, TagAssignmentMap } from '../../parser';
 import { FileStepState } from '../file-step/FileStep';
 import { ImporterFrame } from '../ImporterFrame';
 import {
