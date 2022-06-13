@@ -38,6 +38,12 @@
     z-index: 1; // right above content
   }
 
+  &__boxleftValueAction {
+    position: absolute;
+    top: 0; // icon button padding matches card padding
+    z-index: 1; // right above content
+  }
+
   &__boxPlaceholderHelp {
     position: absolute;
     top: 0;
