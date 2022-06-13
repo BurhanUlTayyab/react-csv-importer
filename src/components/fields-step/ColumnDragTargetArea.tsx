@@ -95,13 +95,13 @@ const TargetBox: React.FC<{
   };
 
   const [value, setValue] = useState(getInitialState);
-  // const handleChange = (e: any) => {
-  //   setValue(e.target.value);
-  // };
-  const handleChange = (e: any, field: any) => {
+  const handleChange = (e: any) => {
     setValue(e.target.value);
-    console.log("HANDLE_CHANGE", e, field)
-  }
+  };
+  // const handleChange = (e: any, field: any) => {
+  //   setValue(e.target.value);
+  //   console.log("HANDLE_CHANGE", e, field)
+  // }
   // @todo mouse cursor changes to reflect draggable state
   return (
     <section
@@ -161,7 +161,7 @@ const TargetBox: React.FC<{
             </div>
 
             <div className="CSVImporter_ColumnDragTargetArea__boxleftValueAction">
-              <select className="CSVImporter_SelectButton" value={value} onClick={(e) => handleChange(e, field.name)}>
+              <select className="CSVImporter_SelectButton" value={value} onClick={handleChange}>
                 <option value="group_by">Group By</option>
                 <option value="sort">Sort</option>
                 <option value="diff">Diff</option>
