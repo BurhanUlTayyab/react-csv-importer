@@ -132,6 +132,7 @@ const TargetBox: React.FC<{
 
         {/* tab order after column contents */}
         {dragState && !dragState.pointerStartInfo ? (
+          <>
           <div className="CSVImporter_ColumnDragTargetArea__boxValueAction">
             <IconButton
               label={l10n.getDragTargetAssignTooltip(dragState.column.code)}
@@ -140,6 +141,15 @@ const TargetBox: React.FC<{
               onClick={() => onAssign(field.name)}
             />
           </div>
+            <div className="CSVImporter_ColumnDragTargetArea__boxleftValueAction">
+              <select className="CSVImporter_SelectButton" value={value} onChange={handleChange}>
+                <option value="group_by">Group By</option>
+                <option value="sort">Sort</option>
+                <option value="diff">Diff</option>
+                <option value="columns">Columns</option>
+              </select>
+            </div>
+          </>
         ) : (
           !sourceColumn &&
           assignedColumn && (
@@ -151,15 +161,6 @@ const TargetBox: React.FC<{
                 type="close"
                 onClick={() => onUnassign(assignedColumn)}
               />
-            </div>
-
-            <div className="CSVImporter_ColumnDragTargetArea__boxleftValueAction">
-              <select className="CSVImporter_SelectButton" value={value} onChange={handleChange}>
-                <option value="group_by">Group By</option>
-                <option value="sort">Sort</option>
-                <option value="diff">Diff</option>
-                <option value="columns">Columns</option>
-              </select>
             </div>
             </>
           )
