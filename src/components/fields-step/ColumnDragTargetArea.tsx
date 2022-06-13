@@ -95,7 +95,7 @@ const TargetBox: React.FC<{
   };
 
   const [value, setValue] = useState(getInitialState);
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: any) => {
     console.log(e)
   };
   // @todo mouse cursor changes to reflect draggable state
