@@ -206,15 +206,15 @@ export function useColumnDragState(
         const copy = { ...prev };
 
         // ensure dropped column does not show up elsewhere
-        Object.keys(prev).forEach((e) => {
-          if (copy[e]) {
-            delete copy[e];
-          }
-        });
+        // Object.keys(prev).forEach((e) => {
+        //   if (copy[e]) {
+        //     delete copy[e];
+        //   }
+        // });
 
         // set new field column
-        if (e !== null) {
-          copy[e] = fieldName;
+        if (fieldName !== null) {
+          copy[fieldName] = e;
         }
 
         return copy;
