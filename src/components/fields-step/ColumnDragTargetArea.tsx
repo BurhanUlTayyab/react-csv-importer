@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import { useDrag } from '@use-gesture/react';
 
 import { FieldAssignmentMap } from '../../parser';
@@ -89,6 +89,19 @@ const TargetBox: React.FC<{
 
   const l10n = useLocale('fieldsStep');
 
+  const getInitialState = () => {
+    const value = "columns";
+    return value;
+  };
+
+  const [value, setValue] = useState(getInitialState);
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+
+
+
   // @todo mouse cursor changes to reflect draggable state
   return (
     <section
@@ -135,7 +148,6 @@ const TargetBox: React.FC<{
           !sourceColumn &&
           assignedColumn && (
             <>
-            
             <div className="CSVImporter_ColumnDragTargetArea__boxValueAction">
               <IconButton
                 label={l10n.dragTargetClearTooltip}
@@ -146,12 +158,12 @@ const TargetBox: React.FC<{
             </div>
 
             <div className="CSVImporter_ColumnDragTargetArea__boxleftValueAction">
-            <select className="CSVImporter_SelectButton" value="Radish">
-              <option value="Orange">Orange</option>
-              <option value="Radish">Radish</option>
-              <option value="Cherry">Cherry</option>
-            </select>
-
+              <select className="CSVImporter_SelectButton" value={value} onChange={handleChange}>
+                <option value="group_by">Group By</option>
+                <option value="sort">Sort</option>
+                <option value="diff">Diff</option>
+                <option value="columns">Columns</option>
+              </select>
             </div>
             </>
           )
