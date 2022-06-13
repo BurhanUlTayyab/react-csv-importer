@@ -24,7 +24,7 @@ const TargetBox: React.FC<{
   ) => ReturnType<typeof useDrag>;
   onHover: (fieldName: string, isOn: boolean) => void;
   onAssign: (fieldName: string) => void;
-  onAssignChange: (fieldName: string) => void;
+  onAssignChange: (e: any, fieldName: string, setField: any) => void;
   onUnassign: (column: Column) => void;
 }> = ({
   hasHeaders,
@@ -157,7 +157,7 @@ const TargetBox: React.FC<{
             </div>
 
             <div className="CSVImporter_ColumnDragTargetArea__boxleftValueAction">
-              <select className="CSVImporter_SelectButton" value={value} onChange={(event) => handleChange(event, field.name, setValue)}>
+              <select className="CSVImporter_SelectButton" value={value} onChange={(event) => onAssignChange(event, field.name, setValue)}>
                 <option value="group_by">Group By</option>
                 <option value="sort">Sort</option>
                 <option value="diff">Diff</option>
@@ -187,7 +187,7 @@ export const ColumnDragTargetArea: React.FC<{
   onHover: (fieldName: string, isOn: boolean) => void;
   onAssign: (fieldName: string) => void;
   onUnassign: (column: Column) => void;
-  onAssignChange: (fieldName: string) => void;
+  onAssignChange: (e: any, fieldName: string, setField: any) => void;
 }> = ({
   hasHeaders,
   fields,
