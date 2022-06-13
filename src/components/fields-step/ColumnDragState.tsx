@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { useDrag } from '@use-gesture/react';
 
-import { FieldAssignmentMap, TagAssignmentMap } from '../../parser';
+import { FieldAssignmentMap } from '../../parser';
 import { Column } from './ColumnPreview';
 
 export interface Field {
@@ -48,10 +48,6 @@ export function useColumnDragState(
     initialAssignments
   );
 
-  const [tagAssignments, settagAssignments] = useState<TagAssignmentMap>(
-    initialAssignments
-  );
-
   // make sure there are no extra fields
   useEffect(() => {
     const removedFieldNames = Object.keys(fieldAssignments).filter(
@@ -72,13 +68,6 @@ export function useColumnDragState(
       });
     }
   }, [fields, fieldAssignments]);
-
-  const internaltagHandler = useCallback(
-    (column: any, fieldName: string | null) => {
-      // mark for validation display
-    },
-    []
-  );
 
   const internalAssignHandler = useCallback(
     (column: Column, fieldName: string | null) => {
@@ -211,9 +200,14 @@ export function useColumnDragState(
       console.log("ASSIGN_HANDLER_CHANGE")
       console.log(e)
       console.log(fieldName)
-      internaltagHandler(e, fieldName)
+      // clear active drag state
+      // setDragState(null);
+
+      // if (dragState) {
+      //   internalAssignHandler(dragState.column, fieldName);
+      // }
     },
-    [internaltagHandler, dragState]
+    [internalAssignHandler, dragState]
   );
 
   const assignHandler = useCallback(

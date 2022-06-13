@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 
-import { FieldAssignmentMap, TagAssignmentMap } from '../../parser';
+import { FieldAssignmentMap } from '../../parser';
 import { FileStepState } from '../file-step/FileStep';
 import { ImporterFrame } from '../ImporterFrame';
 import {
@@ -19,7 +19,6 @@ export type Field = DragField;
 
 export interface FieldsStepState {
   fieldAssignments: FieldAssignmentMap;
-  tagAssignments: TagAssignmentMap;
 }
 
 export const FieldsStep: React.FC<{
