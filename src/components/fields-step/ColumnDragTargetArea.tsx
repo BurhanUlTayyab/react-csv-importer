@@ -154,7 +154,7 @@ const TargetBox: React.FC<{
             </div>
 
             <div className="CSVImporter_ColumnDragTargetArea__boxleftValueAction">
-              <select className="CSVImporter_SelectButton" value={value} onChange={handleChange}>
+              <select className="CSVImporter_SelectButton" value={value} onChange={(event) => handleChange(event)}>
                 <option value="group_by">Group By</option>
                 <option value="sort">Sort</option>
                 <option value="diff">Diff</option>
