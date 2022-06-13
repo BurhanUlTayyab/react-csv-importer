@@ -193,6 +193,8 @@ export function Importer<Row extends BaseRow>({
     );
   }
 
+  console.log("MUNA_KITTO", tagObj)
+
   return (
     <LocaleContext.Provider value={locale}>
       <div className="CSVImporter_Importer">
