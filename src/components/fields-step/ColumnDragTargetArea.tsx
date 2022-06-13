@@ -96,7 +96,7 @@ const TargetBox: React.FC<{
 
   const [value, setValue] = useState(getInitialState);
   const handleChange = (e: any) => {
-    console.log(e)
+    setValue(e.target.value);
   };
   // @todo mouse cursor changes to reflect draggable state
   return (
