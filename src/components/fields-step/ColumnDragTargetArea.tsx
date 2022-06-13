@@ -24,6 +24,7 @@ const TargetBox: React.FC<{
   ) => ReturnType<typeof useDrag>;
   onHover: (fieldName: string, isOn: boolean) => void;
   onAssign: (fieldName: string) => void;
+  onAssignChange: (fieldName: string) => void;
   onUnassign: (column: Column) => void;
 }> = ({
   hasHeaders,
@@ -34,7 +35,8 @@ const TargetBox: React.FC<{
   eventBinder,
   onHover,
   onAssign,
-  onUnassign
+  onUnassign,
+  onAssignChange
 }) => {
   // respond to hover events when there is active mouse drag happening
   // (not keyboard-emulated one)
@@ -185,6 +187,7 @@ export const ColumnDragTargetArea: React.FC<{
   onHover: (fieldName: string, isOn: boolean) => void;
   onAssign: (fieldName: string) => void;
   onUnassign: (column: Column) => void;
+  onAssignChange: (fieldName: string) => void;
 }> = ({
   hasHeaders,
   fields,
@@ -195,7 +198,8 @@ export const ColumnDragTargetArea: React.FC<{
   eventBinder,
   onHover,
   onAssign,
-  onUnassign
+  onUnassign,
+  onAssignChange
 }) => {
   const l10n = useLocale('fieldsStep');
 
@@ -222,6 +226,7 @@ export const ColumnDragTargetArea: React.FC<{
             eventBinder={eventBinder}
             onHover={onHover}
             onAssign={onAssign}
+            onAssignChange={onAssignChange}
             onUnassign={onUnassign}
           />
         );

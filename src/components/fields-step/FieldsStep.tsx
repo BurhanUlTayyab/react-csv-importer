@@ -99,7 +99,8 @@ export const FieldsStep: React.FC<{
     dragHoverHandler,
     columnSelectHandler,
     assignHandler,
-    unassignHandler
+    unassignHandler,
+    assignHandlerChange
   } = useColumnDragState(
     fields,
     prevState ? prevState.fieldAssignments : initialAssignments,
@@ -171,6 +172,7 @@ export const FieldsStep: React.FC<{
         onHover={dragHoverHandler}
         onAssign={assignHandler}
         onUnassign={unassignHandler}
+        onAssignChange={assignHandlerChange}
       />
 
       <ColumnDragObject dragState={dragState} />

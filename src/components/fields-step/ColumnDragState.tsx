@@ -30,6 +30,7 @@ export interface DragInfo {
   columnSelectHandler: (column: Column) => void;
   assignHandler: (fieldName: string) => void;
   unassignHandler: (column: Column) => void;
+  assignHandlerChange: (fieldName: string) => void;
 }
 
 export function useColumnDragState(
@@ -194,6 +195,18 @@ export function useColumnDragState(
     });
   }, []);
 
+  const assignHandlerChange = useCallback(
+    (fieldName: string) => {
+      // clear active drag state
+      // setDragState(null);
+
+      // if (dragState) {
+      //   internalAssignHandler(dragState.column, fieldName);
+      // }
+    },
+    [internalAssignHandler, dragState]
+  );
+
   const assignHandler = useCallback(
     (fieldName: string) => {
       // clear active drag state
@@ -229,6 +242,7 @@ export function useColumnDragState(
     dragHoverHandler,
     columnSelectHandler,
     assignHandler,
-    unassignHandler
+    unassignHandler,
+    assignHandlerChange
   };
 }
