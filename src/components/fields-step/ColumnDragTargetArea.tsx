@@ -146,7 +146,7 @@ const TargetBox: React.FC<{
             </div>
 
             <div className="CSVImporter_ColumnDragTargetArea__boxleftValueAction">
-            <select value="Radish">
+            <select className="CSVImporter_IconButton" value="Radish">
               <option value="Orange">Orange</option>
               <option value="Radish">Radish</option>
               <option value="Cherry">Cherry</option>
