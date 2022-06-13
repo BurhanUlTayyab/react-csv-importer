@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 
-import { FieldAssignmentMap, FieldAssignmentLabelMap } from '../../parser';
+import { FieldAssignmentMap } from '../../parser';
 import { FileStepState } from '../file-step/FileStep';
 import { ImporterFrame } from '../ImporterFrame';
 import {
@@ -19,7 +19,6 @@ export type Field = DragField;
 
 export interface FieldsStepState {
   fieldAssignments: FieldAssignmentMap;
-  fieldAssignmentsLabels: FieldAssignmentLabelMap;
 }
 
 export const FieldsStep: React.FC<{
@@ -58,7 +57,6 @@ export const FieldsStep: React.FC<{
     // pre-assign corresponding fields
     const result: FieldAssignmentMap = {};
     const assignedColumnIndexes: boolean[] = [];
-    const resultfield: FieldAssignmentLabelMap = {};
 
     fields.forEach((field) => {
       // find by field stem

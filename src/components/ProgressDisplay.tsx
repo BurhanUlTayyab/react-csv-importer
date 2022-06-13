@@ -122,7 +122,7 @@ export function ProgressDisplay<Row extends BaseRow>({
     const oplock = asyncLockRef.current;
 
     processFile(
-      { ...fileState, fieldAssignments: fieldsState.fieldAssignments, FieldAssignmentLabelMap },
+      { ...fileState, fieldAssignments: fieldsState.fieldAssignments },
       (deltaCount) => {
         // ignore if stale
         if (oplock !== asyncLockRef.current) {

@@ -34,8 +34,6 @@ export type PreviewResults =
 export const PREVIEW_ROW_COUNT = 5;
 
 export type FieldAssignmentMap = { [name: string]: number | undefined };
-export type FieldAssignmentLabelMap = { [name: string]: number | undefined };
-
 
 export type BaseRow = { [name: string]: unknown };
 
@@ -288,7 +286,6 @@ export interface ParserInput {
   papaParseConfig: CustomizablePapaParseConfig;
   hasHeaders: boolean;
   fieldAssignments: FieldAssignmentMap;
-  FieldAssignmentLabelMap: FieldAssignmentLabelMap;
 }
 
 export function processFile<Row extends BaseRow>(
