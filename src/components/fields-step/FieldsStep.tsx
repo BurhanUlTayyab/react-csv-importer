@@ -92,8 +92,6 @@ export const FieldsStep: React.FC<{
   const [fieldTouched, setFieldTouched] = useState<FieldTouchedMap>({});
   const [validationError, setValidationError] = useState<string | null>(null);
 
-  const [tagObj, settagObj] = useState<Object | null>(null);
-
   const {
     fieldAssignments,
     dragState,

@@ -34,8 +34,6 @@ export type PreviewResults =
 export const PREVIEW_ROW_COUNT = 5;
 
 export type FieldAssignmentMap = { [name: string]: number | undefined };
-export type TagAssignmentMap = { [name: string]: number | undefined };
-
 
 export type BaseRow = { [name: string]: unknown };
 
