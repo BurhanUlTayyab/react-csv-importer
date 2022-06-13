@@ -198,7 +198,7 @@ export function useColumnDragState(
   const assignHandlerChange = useCallback(
     (e: any, fieldName: string) => {
       console.log("ASSIGN_HANDLER_CHANGE")
-      console.log(e)
+      console.log(e.target.value)
       console.log(fieldName)
       // clear active drag state
       // setDragState(null);
