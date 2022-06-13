@@ -174,6 +174,7 @@ export function Importer<Row extends BaseRow>({
             fileState={fileState}
             fields={fields}
             prevState={fieldsState}
+            tagObj={tagObj}
             settagObj={settagObj}
             onChange={(state) => {
               setFieldsState(state);

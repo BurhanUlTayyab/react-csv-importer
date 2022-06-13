@@ -26,10 +26,11 @@ export const FieldsStep: React.FC<{
   fields: Field[];
   prevState: FieldsStepState | null;
   settagObj: any;
+  tagObj: any
   onChange: (state: FieldsStepState) => void;
   onAccept: () => void;
   onCancel: () => void;
-}> = ({ fileState, fields, prevState, settagObj, onChange, onAccept, onCancel }) => {
+}> = ({ fileState, fields, prevState, settagObj, tagObj, onChange, onAccept, onCancel }) => {
   const onChangeRef = useRef(onChange);
   onChangeRef.current = onChange;
 
@@ -94,6 +95,7 @@ export const FieldsStep: React.FC<{
   const [validationError, setValidationError] = useState<string | null>(null);
 
   // const [tagObj, settagObj] = useState<Object | null>(null);
+  console.log(tagObj)
 
   const {
     fieldAssignments,
