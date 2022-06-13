@@ -205,7 +205,7 @@ export function useColumnDragState(
       settagObj((prev: any) => {
         const copy = { ...prev };
 
-        console.log(copy)
+        console.log("MUNA_KITTO", copy)
 
         // ensure dropped column does not show up elsewhere
         // Object.keys(prev).forEach((e) => {
