@@ -127,6 +127,8 @@ export const FieldsStep: React.FC<{
 
   const l10n = useLocale('fieldsStep');
 
+  console.log(tagObj)
+
   return (
     <ImporterFrame
       fileName={fileState.file.name}

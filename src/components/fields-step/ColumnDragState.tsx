@@ -201,6 +201,8 @@ export function useColumnDragState(
       console.log("ASSIGN_HANDLER_CHANGE")
       console.log(e)
       console.log(fieldName)
+
+      settagObj({"Muna": 1, "Kitto": 2, "Tuna": 3})
       // clear active drag state
       // setDragState(null);
 
