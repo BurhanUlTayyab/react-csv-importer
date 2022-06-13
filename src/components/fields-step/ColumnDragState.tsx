@@ -36,7 +36,6 @@ export interface DragInfo {
 export function useColumnDragState(
   fields: Field[],
   initialAssignments: FieldAssignmentMap,
-  tagAssignments: TagAssignmentMap,
   onTouched: (fieldName: string) => void
 ): DragInfo {
   // wrap in ref to avoid re-triggering
