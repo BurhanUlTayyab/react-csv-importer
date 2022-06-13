@@ -19,6 +19,7 @@ export type Field = DragField;
 
 export interface FieldsStepState {
   fieldAssignments: FieldAssignmentMap;
+  tagAssignments: TagAssignmentMap;
 }
 
 export const FieldsStep: React.FC<{
