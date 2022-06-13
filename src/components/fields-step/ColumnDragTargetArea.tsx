@@ -143,12 +143,7 @@ const TargetBox: React.FC<{
               />
 
               <div className="CSVImporter_ColumnDragTargetArea__boxleftValueAction">
-                <IconButton
-                  label={l10n.dragTargetClearTooltip}
-                  small
-                  type="close"
-                  onClick={() => onUnassign(assignedColumn)}
-                />
+                Muna is Kitto
               </div>
             </div>
             
