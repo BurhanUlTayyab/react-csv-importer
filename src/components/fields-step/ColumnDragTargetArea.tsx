@@ -24,7 +24,7 @@ const TargetBox: React.FC<{
   ) => ReturnType<typeof useDrag>;
   onHover: (fieldName: string, isOn: boolean) => void;
   onAssign: (fieldName: string) => void;
-  onAssignChange: (e: any, fieldName: string, setField: any) => void;
+  onAssignChange: (e: any, fieldName: string) => void;
   onUnassign: (column: Column) => void;
 }> = ({
   hasHeaders,
@@ -99,7 +99,7 @@ const TargetBox: React.FC<{
   const [value, setValue] = useState(getInitialState);
   const handleChange = (e: any, fieldName: string, setField: any) => {
     setField(e.target.value);
-    onAssignChange(e, fieldName, setField)
+    onAssignChange(e, fieldName)
     console.log("HANDLE_CHANGE", fieldName)
   };
   // @todo mouse cursor changes to reflect draggable state
@@ -188,7 +188,7 @@ export const ColumnDragTargetArea: React.FC<{
   onHover: (fieldName: string, isOn: boolean) => void;
   onAssign: (fieldName: string) => void;
   onUnassign: (column: Column) => void;
-  onAssignChange: (e: any, fieldName: string, setField: any) => void;
+  onAssignChange: (e: any, fieldName: string) => void;
 }> = ({
   hasHeaders,
   fields,

@@ -30,7 +30,7 @@ export interface DragInfo {
   columnSelectHandler: (column: Column) => void;
   assignHandler: (fieldName: string) => void;
   unassignHandler: (column: Column) => void;
-  assignHandlerChange: (e: any, fieldName: string, setField: any) => void;
+  assignHandlerChange: (e: any, fieldName: string) => void;
 }
 
 export function useColumnDragState(
@@ -196,11 +196,10 @@ export function useColumnDragState(
   }, []);
 
   const assignHandlerChange = useCallback(
-    (e: any, fieldName: string, setField: any) => {
+    (e: any, fieldName: string) => {
       console.log("ASSIGN_HANDLER_CHANGE")
       console.log(e)
       console.log(fieldName)
-      console.log(setField)
       // clear active drag state
       // setDragState(null);
 
