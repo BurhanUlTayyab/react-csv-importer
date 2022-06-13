@@ -203,9 +203,12 @@ export function useColumnDragState(
       console.log(fieldName)
 
       settagObj((prev: any) => {
-        const copy = { ...prev };
+        // const copy = { ...prev };
 
-        console.log("MUNA_KITTO", copy)
+        // console.log("MUNA_KITTO", copy)
+
+        return [...prev , {'item': 'muna'}]
+
 
         // ensure dropped column does not show up elsewhere
         // Object.keys(prev).forEach((e) => {
