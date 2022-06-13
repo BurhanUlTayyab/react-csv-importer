@@ -202,28 +202,27 @@ export function useColumnDragState(
       console.log(e)
       console.log(fieldName)
 
-      settagObj((prev: any) => {
-        // const copy = { ...prev };
-
-        // console.log("MUNA_KITTO", copy)
-
-        return [...prev , {'item': 'muna'}]
+      settagObj((prevArr: any) => ([...prevArr, prevArr.length + 1]));
 
 
-        // ensure dropped column does not show up elsewhere
-        // Object.keys(prev).forEach((e) => {
-        //   if (copy[e]) {
-        //     delete copy[e];
-        //   }
-        // });
+      // settagObj((prev: any) => {
+      //   const copy = { ...prev };
+      //   console.log("MUNA_KITTO", copy)
 
-        // set new field column
-        // if (fieldName !== null) {
-        //   copy[fieldName] = e;
-        // }
+      //   // ensure dropped column does not show up elsewhere
+      //   // Object.keys(prev).forEach((e) => {
+      //   //   if (copy[e]) {
+      //   //     delete copy[e];
+      //   //   }
+      //   // });
 
-        // return copy;
-      });
+      //   // set new field column
+      //   // if (fieldName !== null) {
+      //   //   copy[fieldName] = e;
+      //   // }
+
+      //   // return copy;
+      // });
 
       // settagObj({"Muna": 1, "Kitto": 2, "Tuna": 3})
       
