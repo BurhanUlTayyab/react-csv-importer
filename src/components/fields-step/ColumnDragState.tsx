@@ -202,7 +202,26 @@ export function useColumnDragState(
       console.log(e)
       console.log(fieldName)
 
-      settagObj({"Muna": 1, "Kitto": 2, "Tuna": 3})
+      settagObj((prev: any) => {
+        const copy = { ...prev };
+
+        // ensure dropped column does not show up elsewhere
+        Object.keys(prev).forEach((e) => {
+          if (copy[e]) {
+            delete copy[e];
+          }
+        });
+
+        // set new field column
+        if (e !== null) {
+          copy[e] = fieldName;
+        }
+
+        return copy;
+      });
+
+      // settagObj({"Muna": 1, "Kitto": 2, "Tuna": 3})
+      
       // clear active drag state
       // setDragState(null);
 
