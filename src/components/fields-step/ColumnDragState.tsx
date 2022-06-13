@@ -69,6 +69,13 @@ export function useColumnDragState(
     }
   }, [fields, fieldAssignments]);
 
+  const internaltagHandler = useCallback(
+    (column: Column, fieldName: string | null) => {
+      // mark for validation display
+    },
+    []
+  );
+
   const internalAssignHandler = useCallback(
     (column: Column, fieldName: string | null) => {
       setFieldAssignments((prevAssignments) => {
@@ -200,14 +207,9 @@ export function useColumnDragState(
       console.log("ASSIGN_HANDLER_CHANGE")
       console.log(e)
       console.log(fieldName)
-      // clear active drag state
-      // setDragState(null);
-
-      // if (dragState) {
-      //   internalAssignHandler(dragState.column, fieldName);
-      // }
+      internaltagHandler(e, fieldName)
     },
-    [internalAssignHandler, dragState]
+    [internaltagHandler, dragState]
   );
 
   const assignHandler = useCallback(
