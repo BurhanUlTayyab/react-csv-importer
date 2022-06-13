@@ -24,6 +24,7 @@ const SourceBox: React.FC<{
 }> = ({
   column,
   fieldAssignments,
+  fieldAssignmentsLabels,
   dragState,
   eventBinder,
   onSelect,
@@ -105,6 +106,7 @@ export const ColumnDragSourceArea: React.FC<{
 }> = ({
   columns,
   fieldAssignments,
+  fieldAssignmentsLabels,
   dragState,
   eventBinder,
   onSelect,
@@ -122,6 +124,7 @@ export const ColumnDragSourceArea: React.FC<{
         key={columnIndex}
         column={column}
         fieldAssignments={fieldAssignments}
+        fieldAssignmentsLabels={fieldAssignmentsLabels}
         dragState={dragState}
         eventBinder={eventBinder}
         onSelect={onSelect}
