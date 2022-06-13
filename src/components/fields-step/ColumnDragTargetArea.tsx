@@ -141,7 +141,12 @@ const TargetBox: React.FC<{
                 type="close"
                 onClick={() => onUnassign(assignedColumn)}
               />
+
+              <div>
+                Muna is Kitto
+              </div>
             </div>
+            
           )
         )}
       </div>
