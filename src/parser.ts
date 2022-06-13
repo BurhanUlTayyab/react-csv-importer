@@ -288,7 +288,6 @@ export interface ParserInput {
   papaParseConfig: CustomizablePapaParseConfig;
   hasHeaders: boolean;
   fieldAssignments: FieldAssignmentMap;
-  tagAssignments: TagAssignmentMap;
 }
 
 export function processFile<Row extends BaseRow>(
