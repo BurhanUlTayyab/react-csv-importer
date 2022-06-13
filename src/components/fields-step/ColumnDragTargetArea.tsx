@@ -99,8 +99,7 @@ const TargetBox: React.FC<{
   const [value, setValue] = useState(getInitialState);
   const handleChange = (e: any, fieldName: string, setField: any) => {
     setField(e.target.value);
-    onAssign(fieldName + "-" + e.target.value)
-    // onAssignChange(e, fieldName)
+    onAssignChange(e, fieldName)
     console.log("HANDLE_CHANGE", fieldName)
   };
   // @todo mouse cursor changes to reflect draggable state
