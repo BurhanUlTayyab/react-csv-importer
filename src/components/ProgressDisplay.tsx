@@ -61,7 +61,8 @@ export function ProgressDisplay<Row extends BaseRow>({
       file: fileState.file,
       preview: externalPreview,
       fields: fieldList,
-      columnFields: [...columnSparseList]
+      columnFields: [...columnSparseList],
+      diffObj: "Muna"
     };
   }, [fileState, fieldsState, externalPreview]);
 
