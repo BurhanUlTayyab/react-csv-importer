@@ -25,6 +25,7 @@ export function ProgressDisplay<Row extends BaseRow>({
   fileState,
   fieldsState,
   externalPreview,
+  tagObj,
   processChunk,
   onStart,
   onComplete,
@@ -34,6 +35,7 @@ export function ProgressDisplay<Row extends BaseRow>({
   fileState: FileStepState;
   fieldsState: FieldsStepState;
   externalPreview: ImporterFilePreview;
+  tagObj: any;
   processChunk: ParseCallback<Row>;
   onStart?: (info: ImportInfo) => void;
   onComplete?: (info: ImportInfo) => void;
@@ -62,7 +64,7 @@ export function ProgressDisplay<Row extends BaseRow>({
       preview: externalPreview,
       fields: fieldList,
       columnFields: [...columnSparseList],
-      diffObj: "Muna"
+      diffObj: tagObj
     };
   }, [fileState, fieldsState, externalPreview]);
 

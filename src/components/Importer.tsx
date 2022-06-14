@@ -201,6 +201,7 @@ export function Importer<Row extends BaseRow>({
           fileState={fileState}
           fieldsState={fieldsState}
           externalPreview={externalPreview}
+          tagObj={tagObj}
           processChunk={processChunk}
           onStart={onStart}
           onRestart={
