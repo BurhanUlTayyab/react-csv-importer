@@ -202,7 +202,21 @@ export function useColumnDragState(
       console.log(e)
       console.log(fieldName)
 
-      settagObj((prevArr: any) => ([...prevArr, {fieldName: e}]));
+      //settagObj((prevArr: any) => ([...prevArr, {[fieldName]: e}]));
+      
+      settagObj((prev: any) => {
+        const copy = {...prev}
+
+        copy.map((elem: any, idx: any) => {
+          if (elem[fieldName]){
+            delete elem[fieldName]
+          }
+        })
+
+        copy[fieldName] = e
+        return copy
+      })
+      
       
 
 
