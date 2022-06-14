@@ -207,10 +207,11 @@ export function useColumnDragState(
       settagObj((prev: any) => {
         const copy = {...prev}
 
-        copy.map((elem: any, idx: any) => {
-          if (elem[fieldName]){
-            delete elem[fieldName]
+        Object.keys(prev).forEach((i) => {
+          if (copy[i]){
+            delete copy[i]
           }
+          console.log("Muna is Kitto and Kitto is Muna", i)
         })
 
         copy[fieldName] = e

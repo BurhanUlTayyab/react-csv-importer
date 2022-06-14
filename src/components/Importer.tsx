@@ -98,7 +98,7 @@ export function Importer<Row extends BaseRow>({
   const [fieldsState, setFieldsState] = useState<FieldsStepState | null>(null);
   const [fieldsAccepted, setFieldsAccepted] = useState<boolean>(false);
 
-  const [tagObj, settagObj] = useState<any>([]);
+  const [tagObj, settagObj] = useState<any>({});
 
 
   // reset field assignments when file changes
