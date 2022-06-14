@@ -202,7 +202,8 @@ export function useColumnDragState(
       console.log(e)
       console.log(fieldName)
 
-      settagObj((prevArr: any) => ([...prevArr, prevArr.length + 1]));
+      settagObj((prevArr: any) => ([...prevArr, {fieldName: e}]));
+      
 
 
       // settagObj((prev: any) => {
