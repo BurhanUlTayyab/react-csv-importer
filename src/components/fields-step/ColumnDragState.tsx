@@ -215,7 +215,7 @@ export function useColumnDragState(
         })
 
         copy[fieldName] = e
-        return copy
+        return {...prev, copy}
       })
       
       
