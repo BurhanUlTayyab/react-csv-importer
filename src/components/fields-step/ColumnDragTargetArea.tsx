@@ -45,7 +45,7 @@ const TargetBox: React.FC<{
   // if this field is the current highlighted drop target,
   // get the originating column data for display
   const sourceColumn =
-    dragState && dragState.dropFieldName === field.label
+    dragState && dragState.dropFieldName === field.name
       ? dragState.column
       : null;
 
@@ -56,9 +56,9 @@ const TargetBox: React.FC<{
   const dragStartHandlers = useMemo(
     () =>
       assignedColumn && !isReDragged
-        ? eventBinder(assignedColumn, field.label)
+        ? eventBinder(assignedColumn, field.name)
         : {},
-    [eventBinder, assignedColumn, isReDragged, field.label]
+    [eventBinder, assignedColumn, isReDragged, field.name]
   );
 
   const valueContents = useMemo(() => {
@@ -108,15 +108,15 @@ const TargetBox: React.FC<{
       className="CSVImporter_ColumnDragTargetArea__box"
       aria-label={
         field.isOptional
-          ? l10n.getDragTargetOptionalCaption(field.label)
-          : l10n.getDragTargetRequiredCaption(field.label)
+          ? l10n.getDragTargetOptionalCaption(field.name)
+          : l10n.getDragTargetRequiredCaption(field.name)
       }
       ref={containerRef}
-      onPointerEnter={() => onHover(field.label, true)}
-      onPointerLeave={() => onHover(field.label, false)}
+      onPointerEnter={() => onHover(field.name, true)}
+      onPointerLeave={() => onHover(field.name, false)}
     >
       <div className="CSVImporter_ColumnDragTargetArea__boxLabel" aria-hidden>
-        {field.label}
+        {field.name}
         {field.isOptional ? null : <b>*</b>}
       </div>
 
@@ -141,7 +141,7 @@ const TargetBox: React.FC<{
               label={l10n.getDragTargetAssignTooltip(dragState.column.code)}
               small
               type="forward"
-              onClick={() => onAssign(field.label)}
+              onClick={() => onAssign(field.name)}
             />
           </div>
         ) : (
@@ -158,7 +158,7 @@ const TargetBox: React.FC<{
             </div>
 
             <div className="CSVImporter_ColumnDragTargetArea__boxleftValueAction">
-              <select className="CSVImporter_SelectButton" value={value} onChange={(event) => handleChange(event, field.label, setValue)}>
+              <select className="CSVImporter_SelectButton" value={value} onChange={(event) => handleChange(event, field.name, setValue)}>
                 <option value="group_by">Group By</option>
                 <option value="sort">Sort</option>
                 <option value="diff">Diff</option>
@@ -210,13 +210,13 @@ export const ColumnDragTargetArea: React.FC<{
       aria-label={l10n.dragTargetAreaCaption}
     >
       {fields.map((field) => {
-        const assignedColumnIndex = fieldAssignments[field.label];
+        const assignedColumnIndex = fieldAssignments[field.name];
 
         return (
           <TargetBox
-            key={field.label}
+            key={field.name}
             field={field}
-            touched={fieldTouched[field.label]}
+            touched={fieldTouched[field.name]}
             hasHeaders={hasHeaders}
             assignedColumn={
               assignedColumnIndex !== undefined
