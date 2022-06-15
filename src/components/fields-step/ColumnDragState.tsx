@@ -53,7 +53,7 @@ export function useColumnDragState(
   useEffect(() => {
     const removedFieldNames = Object.keys(fieldAssignments).filter(
       (existingFieldName) =>
-        !fields.some((field) => field.name === existingFieldName)
+        !fields.some((field) => field.label === existingFieldName)
     );
 
     if (removedFieldNames.length > 0) {

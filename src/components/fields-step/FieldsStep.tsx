@@ -83,7 +83,7 @@ export const FieldsStep: React.FC<{
       // assign if found
       if (matchingColumnIndex !== -1) {
         assignedColumnIndexes[matchingColumnIndex] = true;
-        result[field.name] = matchingColumnIndex;
+        result[field.label] = matchingColumnIndex;
       }
     });
 
@@ -140,14 +140,14 @@ export const FieldsStep: React.FC<{
         // mark all fields as touched
         const fullTouchedMap: typeof fieldTouched = {};
         fields.some((field) => {
-          fullTouchedMap[field.name] = true;
+          fullTouchedMap[field.label] = true;
         });
         setFieldTouched(fullTouchedMap);
 
         // submit if validation succeeds
         const hasUnassignedRequired = fields.some(
           (field) =>
-            !field.isOptional && fieldAssignments[field.name] === undefined
+            !field.isOptional && fieldAssignments[field.label] === undefined
         );
 
         if (!hasUnassignedRequired) {
